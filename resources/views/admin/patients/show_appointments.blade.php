@@ -9,7 +9,7 @@
         <div class="col-4">
             <div class="card text-center">
                 <div class="card-header fw-bold">
-                    Consulta marcada para:  {{ $appointment->consultation_time }}
+                    Consulta marcada para:  {{ $appointment->consultation_time->format('d/m/Y H:i:s') }}
                 </div>
                 <div class="card-body">
                     <h5 class="card-title fw-bold">Dr. {{ $appointment->doctor->name }}</h5>
@@ -19,7 +19,7 @@
                     @endif
                 </div>
                 <div class="card-footer text-muted">
-                    Agendado dia: {{ $appointment->created_at }}
+                    Agendado dia: {{ $appointment->created_at->format('d/m/Y H:i:s') }}
                 </div>
             </div>
         </div>

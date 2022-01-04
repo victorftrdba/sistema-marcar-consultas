@@ -16,6 +16,11 @@ class Appointment extends Model
         'responsible_cpf',
     ];
 
+    protected $dates = [
+        'consultation_time',
+        'created_at'
+    ];
+
     public function patient()
     {
         return $this->belongsTo(Patient::class);
