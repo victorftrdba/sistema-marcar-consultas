@@ -1,0 +1,12 @@
+.--login_section .--login_card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.--navbar {
+  background: #03fca1;
+}
+.--navbar .--navbar_logo {
+  text-shadow: 1px 1px #000000;
+}
