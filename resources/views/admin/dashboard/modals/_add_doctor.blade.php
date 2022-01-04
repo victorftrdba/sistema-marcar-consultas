@@ -38,7 +38,7 @@
                     <div class="border-top mt-4">
                         <button type="submit"
                             class="btn text-uppercase rounded-0 text-white fw-bold --green_button mt-4">Salvar
-                            Especialidade</button>
+                            Médico</button>
                     </div>
                 </form>
             </div>

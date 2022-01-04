@@ -99,10 +99,10 @@
                     <tbody>
                         @forelse($patients as $patient)
                         <tr>
-                            <td>{{ $patient->name ?? '' }}</td>
+                            <td class="text-uppercase">{{ $patient->name ?? '' }}</td>
                             <td>{{ $patient->age ?? '' }}</td>
                             <td>{{ $patient->cpf ?? '' }}</td>
-                            <td>{{ $patient->email ?? '' }}</td>
+                            <td class="text-lowercase">{{ $patient->email ?? '' }}</td>
                             <td>{{ $patient->zipcode ?? '' }}</td>
                             <td>{{ $patient->address ?? '' }}</td>
                             <td>{{ $patient->number ?? '' }}</td>
@@ -134,6 +134,8 @@
 </script>
 @endforeach
 @endif
+
+<script src="{{ asset('js/app.js') }}"></script>
 @endpush
 
 @endsection

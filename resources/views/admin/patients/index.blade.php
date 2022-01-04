@@ -5,41 +5,69 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mt-5 mb-5 text-center">
-                <h3 class="fw-bold text-uppercase">Lista de Pacientes</h3>
-                <table class="table table-bordered">
-                    <thead>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>CPF</th>
-                        <th>E-mail</th>
-                        <th>CEP</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>Número</th>
-                        <th>Ações</th>
-                    </thead>
-                    <tbody>
-                        @forelse($patients as $patient)
-                        <tr>
-                            <td class="text-uppercase">{{ $patient->name ?? '' }}</td>
-                            <td>{{ $patient->age ?? '' }}</td>
-                            <td>{{ $patient->cpf ?? '' }}</td>
-                            <td class="text-lowercase">{{ $patient->email ?? '' }}</td>
-                            <td>{{ $patient->zipcode ?? '' }}</td>
-                            <td>{{ $patient->address ?? '' }}</td>
-                            <td>@foreach($patient->phones as $phone) <div>{{ $phone->number }}</div> @endforeach</td>
-                            <td>{{ $patient->number ?? '' }}</td>
-                            <td><a href="{{ route('admin.patients.appointment', $patient->id) }}" class="fw-bold text-uppercase text-decoration-none btn btn-secondary rounded-0 text-white"><i class="fas fa-calendar-check"></i></a></td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td>Nenhuma informação encontrada</td>
-                        </tr>
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
+            <h3 class="fw-bold text-uppercase">Lista de Pacientes</h3>
+            <form class="input-group mb-4 d-flex justify-content-end">
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" name="q" placeholder="Buscar paciente..." />
+                </div>
+                <button type="submit" class="btn --green_button text-white">
+                    <i class="fas fa-search" style="filter: drop-shadow(1px 1px 1px black);"></i>
+                </button>
+            </form>
+            <table class="table table-bordered">
+                <thead>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>CPF</th>
+                    <th>E-mail</th>
+                    <th>CEP</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Número</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    @forelse($patients as $patient)
+                    <tr>
+                        <td class="text-uppercase">{{ $patient->name ?? '' }}</td>
+                        <td>{{ $patient->age ?? '' }}</td>
+                        <td>{{ $patient->cpf ?? '' }}</td>
+                        <td class="text-lowercase">{{ $patient->email ?? '' }}</td>
+                        <td>{{ $patient->zipcode ?? '' }}</td>
+                        <td>{{ $patient->address ?? '' }}</td>
+                        <td>@foreach($patient->phones as $phone) <div>{{ $phone->number }}</div> @endforeach</td>
+                        <td>{{ $patient->number ?? '' }}</td>
+                        <td><a href="{{ route('admin.patients.appointment', $patient->id) }}"
+                                class="fw-bold text-uppercase text-decoration-none btn btn-secondary rounded-0 text-white"><i
+                                    class="fas fa-calendar-check"></i></a></td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td>Nenhuma informação encontrada</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+        {{ $patients->links() }}
     </div>
 </div>
 
 @endsection
+
+@push('js')
+@if(session('success'))
+@foreach(session('success') as $success)
+<script>
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: "{!! $success !!}",
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+</script>
+@endforeach
+@endif
+@endpush
