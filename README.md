@@ -14,4 +14,4 @@ Rode os comandos na ordem a seguir: <br><br>
     <b>npm i</b> <br>
     <b>php artisan migrate</b> (lembre-se de ter configurado o .env com as informações do seu banco de dados) <br>
     <b>php artisan db:seed</b> (para criar o usuário que será usado para logar no painel) <br><br>
-    
+Caso queira utilizar uma base de dados com alguns dados fakes, está localizado na pasta <b>doc</b> na raíz do projeto.
