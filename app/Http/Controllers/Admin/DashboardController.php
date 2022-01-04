@@ -12,11 +12,23 @@ use App\Models\Phone;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Specialty $specialties)
     {
-        $specialties = Specialty::get();
+        $specialties = Specialty::paginate(8);
 
-        return view('admin.dashboard.index', compact('specialties'));
+        $patients = Patient::paginate(8);
+
+        $doctors = Doctor::paginate(8);
+
+        return view('admin.dashboard.index', compact('specialties', 'patients', 'doctors'));
+    }
+
+    public function searchSpecialty(Request $request)
+    {
+        $result = Specialty::where('name', 'like', '%' . $request->get('q') . '%')
+        ->paginate(10);
+
+        return response()->json($result);
     }
 
     public function storeSpecialty(Request $request, Specialty $specialty)

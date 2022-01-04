@@ -21,7 +21,7 @@
                                 <label for="specialty" class="col-form-label fw-bold text-uppercase">Especialidades</label>
                                 <select name="specialty" class="form-select">
                                     @forelse($specialties as $specialty)
-                                    <option value="{{ $specialty->name }}">{{ $specialty->name }}</option>
+                                    <option value="{{ $specialty->name ?? '' }}">{{ $specialty->name ?? '' }}</option>
                                     @empty
                                     <option value="Nenhuma especialidade encontrada">Nenhuma especialidade encontrada</option>
                                     @endforelse

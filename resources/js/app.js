@@ -1,24 +1,46 @@
 require('./bootstrap');
 
+$(document).ready(function () {
+    $('#doctor_search').select2({
+        placeholder: 'Pesquise pela especialidade...',
+        formatNoMatches: function () {
+            return "Não há resultados";
+        },
+        ajax: {
+            url: '/admin/searchSpecialty',
+            dataType: 'json',
+            processResults: function (data) {
+                return {
+                    results: data.data.map(v => {
+                        let name = v.name;
+                        return { id: v.id, text: name };
+                    })
+                };
+            }
+        }
+    })
+
+});
+
 var phoneMask = IMask(
     document.getElementById('phone'), {
-    mask: '(00) 00000-0000'
-});
+        mask: '(00) 00000-0000'
+    });
 
 var zipcodeMask = IMask(
-  document.getElementById('zipcode'), {
-    mask: '00000000'
-});
+    document.getElementById('zipcode'), {
+        mask: '00000000'
+    });
 
 var cpfMask = IMask(
-  document.getElementById('cpf'), {
-    mask: '000.000.000-00'
-});
+    document.getElementById('cpf'), {
+        mask: '000.000.000-00'
+    });
 
 var crmMask = IMask(
-  document.getElementById('crm'), {
-    mask: '00000000-0/BR'
-  });
+    document.getElementById('crm'), {
+        mask: '00000000-0/BR'
+    });
 
 const button = document.querySelector('#addPhone');
 
@@ -43,6 +65,6 @@ zipcode.addEventListener('change', function () {
             response.json()
                 .then(data => {
                     document.querySelector('#address').value = `${data.logradouro} - ${data.bairro} - ${data.localidade}`;
-            })
-    })
+                })
+        })
 });

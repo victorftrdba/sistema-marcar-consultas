@@ -2062,6 +2062,29 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$(document).ready(function () {
+  $('#doctor_search').select2({
+    placeholder: 'Pesquise pela especialidade...',
+    formatNoMatches: function formatNoMatches() {
+      return "Não há resultados";
+    },
+    ajax: {
+      url: '/admin/searchSpecialty',
+      dataType: 'json',
+      processResults: function processResults(data) {
+        return {
+          results: data.data.map(function (v) {
+            var name = v.name;
+            return {
+              id: v.id,
+              text: name
+            };
+          })
+        };
+      }
+    }
+  });
+});
 var phoneMask = IMask(document.getElementById('phone'), {
   mask: '(00) 00000-0000'
 });

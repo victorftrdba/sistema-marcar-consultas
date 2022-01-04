@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LogoutController;
+use App\Http\Controllers\Admin\PatientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,11 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function() {
     Route::post('/novo-medico', [DashboardController::class, 'storeDoctor'])->name('admin.storeDoctor');
     Route::post('/novo-paciente', [DashboardController::class, 'storePatient'])->name('admin.storePatient');
     Route::post('/nova-especialidade', [DashboardController::class, 'storeSpecialty'])->name('admin.storeSpecialty');
+
+    Route::get('/searchSpecialty', [DashboardController::class, 'searchSpecialty'])->name('admin.searchSpecialty');
+
+    Route::get('/pacientes', [PatientController::class, 'index'])->name('admin.patients.index');
+    Route::get('/pacientes/nova-consulta/{id}', [PatientController::class, 'appointment'])->name('admin.patients.appointment');
 
     Route::post('/logout', [LogoutController::class, 'logout'])->name('admin.logout');
 });

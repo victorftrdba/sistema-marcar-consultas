@@ -13,6 +13,7 @@ class Patient extends Model
         'name',
         'cpf',
         'email',
+        'age',
         'zipcode',
         'address',
         'number',
@@ -20,6 +21,6 @@ class Patient extends Model
 
     public function phones()
     {
-        $this->hasMany(Phone::class);
+        return $this->hasMany(Phone::class);
     }
 }

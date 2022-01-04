@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Phone extends Model
+class Appointment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'number',
+        'consultation_time',
         'patient_id',
+        'doctor_id',
+        'responsible_cpf',
     ];
-
-    public function patient()
-    {
-        return $this->belongsTo(Patient::class);
-    }
 }

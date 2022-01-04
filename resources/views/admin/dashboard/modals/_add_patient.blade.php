@@ -61,6 +61,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-6">
+                            <div class="mb-3 text-center">
+                                <label for="age" class="col-form-label fw-bold text-uppercase">Idade</label>
+                                    <input type="number" class="form-control" id="age" name="age">
+                            </div>
+                        </div>
                         <div class="border-top mt-4">
                             <button type="submit"
                                 class="btn text-uppercase rounded-0 text-white fw-bold --green_button mt-4">Salvar
