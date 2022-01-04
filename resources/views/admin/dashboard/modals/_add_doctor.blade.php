@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-6">
                             <div class="mb-3 text-center">
-                                <label for="specialty" class="col-form-label fw-bold text-uppercase">Especialidade</label>
+                                <label for="specialty" class="col-form-label fw-bold text-uppercase">Especialidades</label>
                                 <select name="specialty" class="form-select">
                                     @forelse($specialties as $specialty)
                                     <option value="{{ $specialty->name }}">{{ $specialty->name }}</option>
@@ -31,7 +31,7 @@
                         <div class="col-6">
                             <div class="mb-3 text-center">
                                 <label for="crm" class="col-form-label fw-bold text-uppercase">CRM</label>
-                                <input type="text" class="form-control" name="crm" placeholder="Ex: 00000000-0/BR">
+                                <input type="text" id="crm" class="form-control" name="crm" placeholder="Ex: 00000000-0/BR">
                             </div>
                         </div>
                     </div>

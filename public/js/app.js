@@ -2062,6 +2062,39 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var phoneMask = IMask(document.getElementById('phone'), {
+  mask: '(00) 00000-0000'
+});
+var zipcodeMask = IMask(document.getElementById('zipcode'), {
+  mask: '00000000'
+});
+var cpfMask = IMask(document.getElementById('cpf'), {
+  mask: '000.000.000-00'
+});
+var crmMask = IMask(document.getElementById('crm'), {
+  mask: '00000000-0/BR'
+});
+var button = document.querySelector('#addPhone');
+button.addEventListener('click', function () {
+  var input = document.createElement('input');
+  input.setAttribute('type', 'number');
+  input.setAttribute('name', 'phone[]');
+  input.setAttribute('class', 'form-control mt-3');
+  input.setAttribute('id', 'newPhone');
+  input.setAttribute('placeholder', 'Ex: DD000000000');
+  input.setAttribute('maxlength', '11');
+  document.querySelector('#phones').appendChild(input);
+});
+var zipcode = document.querySelector("#zipcode");
+zipcode.addEventListener('change', function () {
+  var cep = this.value;
+  fetch("https://viacep.com.br/ws/".concat(cep, "/json/")).then(function (response) {
+    response.json().then(function (data) {
+      document.querySelector('#address').value = "".concat(data.logradouro, " - ").concat(data.bairro, " - ").concat(data.localidade);
+    });
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

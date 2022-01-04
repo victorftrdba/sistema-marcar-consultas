@@ -26,4 +26,20 @@
     </div>
 </section>
 
+@push('js')
+    @if(session('success'))
+            @foreach(session('success') as $success)
+            <script>
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "{!! $success !!}",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            </script>
+            @endforeach
+    @endif
+@endpush
+
 @endsection

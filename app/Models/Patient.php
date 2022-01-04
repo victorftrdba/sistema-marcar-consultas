@@ -17,4 +17,9 @@ class Patient extends Model
         'address',
         'number',
     ];
+
+    public function phones()
+    {
+        $this->hasMany(Phone::class);
+    }
 }
