@@ -10,3 +10,15 @@
 .--navbar .--navbar_logo {
   text-shadow: 1px 1px #000000;
 }
+.--navbar .--btn_logout {
+  text-shadow: 1px 1px #000000;
+}
+
+.--green_button {
+  background: #03fca1;
+  text-shadow: 1px 1px #000000;
+}
+
+.--dashboard_section .--modal_button {
+  font-size: 0.8rem !important;
+}

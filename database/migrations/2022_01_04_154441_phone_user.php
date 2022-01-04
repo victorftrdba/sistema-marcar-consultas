@@ -15,7 +15,7 @@ class PhoneUser extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('number');
             $table->unsignedBigInteger('patient_id')->references('id')->on('patients');
             $table->timestamps();
         });
