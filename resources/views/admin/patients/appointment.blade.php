@@ -37,7 +37,7 @@
         </div>
         @endif
         <div class="col-12 d-flex justify-content-end">
-            <a class="btn btn-primary rounded-0 me-2 fw-bold" href="{{ route('admin.dashboard.index') }}">Voltar para o Dashboard</a>
+            <a class="btn btn-primary rounded-0 me-2 fw-bold" href="{{ route('admin.patients.index') }}">Voltar para Lista de Pacientes</a>
             <button type="submit" class="btn --green_button text-white fw-bold rounded-0">Agendar</button>
         </div>
     </form>

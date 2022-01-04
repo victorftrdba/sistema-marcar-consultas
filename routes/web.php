@@ -36,6 +36,7 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function() {
     Route::get('/pacientes', [PatientController::class, 'index'])->name('admin.patients.index');
     Route::get('/pacientes/nova-consulta/{id}', [PatientController::class, 'appointment'])->name('admin.patients.appointment');
     Route::post('/pacientes/criar-consulta/{id}', [PatientController::class, 'storeAppointment'])->name('admin.patients.storeAppointment');
+    Route::get('/pacientes/mostrar-consultas/{id}', [PatientController::class, 'showAppointments'])->name('admin.patients.showAppointments');
 
     // Rota de Logout
     Route::post('/logout', [LogoutController::class, 'logout'])->name('admin.logout');

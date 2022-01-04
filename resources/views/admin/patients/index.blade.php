@@ -37,7 +37,9 @@
                         <td>{{ $patient->address ?? '' }}</td>
                         <td>@foreach($patient->phones as $phone) <div>{{ $phone->number }}</div> @endforeach</td>
                         <td>{{ $patient->number ?? '' }}</td>
-                        <td><a href="{{ route('admin.patients.appointment', $patient->id) }}"
+                        <td><a href="{{ route('admin.patients.showAppointments', $patient->id) }}"
+                                class="fw-bold text-uppercase text-decoration-none btn btn-secondary rounded-0 text-white"><i class="fas fa-book-open"></i></a>
+                                <a href="{{ route('admin.patients.appointment', $patient->id) }}"
                                 class="fw-bold text-uppercase text-decoration-none btn btn-secondary rounded-0 text-white"><i
                                     class="fas fa-calendar-check"></i></a></td>
                     </tr>

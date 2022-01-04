@@ -50,7 +50,13 @@ class PatientController extends Controller
         return redirect()->route('admin.patients.index')->withSuccess([
             'success' => 'Consulta agendada com sucesso!'
         ]);
+    }
 
+    public function showAppointments($id, Patient $patient)
+    {
+        $patient = $patient->findOrFail($id);
+
+        return view('admin.patients.show_appointments', compact('patient'));
     }
 
     public function searchDoctor(Request $request)

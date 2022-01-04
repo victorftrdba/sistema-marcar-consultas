@@ -2,6 +2,8 @@
 
 namespace App\Repositories;
 
+use App\Models\Doctor;
+
 class PatientRepository {
     public static function store($request, $model, $id)
     {

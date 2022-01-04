@@ -15,4 +15,14 @@ class Appointment extends Model
         'doctor_id',
         'responsible_cpf',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }

@@ -14,4 +14,9 @@ class Doctor extends Model
         'specialty',
         'crm',
     ];
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 }
