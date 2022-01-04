@@ -94,6 +94,7 @@
                         <th>E-mail</th>
                         <th>CEP</th>
                         <th>Endereço</th>
+                        <th>Criado em</th>
                         <th>Número</th>
                     </thead>
                     <tbody>
@@ -105,6 +106,7 @@
                             <td class="text-lowercase">{{ $patient->email ?? '' }}</td>
                             <td>{{ $patient->zipcode ?? '' }}</td>
                             <td>{{ $patient->address ?? '' }}</td>
+                            <td>{{ $patient->created_at->format('d/m/Y H:i:s') }}</td>
                             <td>{{ $patient->number ?? '' }}</td>
                         </tr>
                         @empty

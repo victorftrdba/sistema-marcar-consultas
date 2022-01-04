@@ -4,7 +4,7 @@
 
 <div class="container mt-5">
     <div class="row mb-5">
-        <h2 class="text-uppercase fw-bold mb-5">Consultas agendadas para {{ $patient->name }} | {{ $patient->age }} anos</h2>
+        <h2 class="text-uppercase fw-bold mb-5">Consultas de {{ $patient->name }} | Idade: {{ $patient->age }} anos</h2>
         @foreach($patient->appointments as $appointment)
         <div class="col-4">
             <div class="card text-center">
