@@ -14,11 +14,11 @@ class DashboardController extends Controller
 {
     public function index(Specialty $specialties)
     {
-        $specialties = Specialty::paginate(8);
+        $specialties = Specialty::orderBy('created_at', 'desc')->paginate(8);
 
-        $patients = Patient::paginate(8);
+        $patients = Patient::orderBy('created_at', 'desc')->paginate(8);
 
-        $doctors = Doctor::paginate(8);
+        $doctors = Doctor::orderBy('created_at', 'desc')->paginate(8);
 
         return view('admin.dashboard.index', compact('specialties', 'patients', 'doctors'));
     }
