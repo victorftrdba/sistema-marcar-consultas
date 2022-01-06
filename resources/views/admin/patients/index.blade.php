@@ -7,13 +7,19 @@
         <div class="col-12 mt-5 mb-5 text-center">
             <h3 class="fw-bold text-uppercase">Lista de Pacientes</h3>
             <form class="input-group mb-4 d-flex justify-content-end">
+                <div class="d-flex align-items-center justify-content-start">
+                </div>
                 <div class="form-outline">
                     <input type="search" id="form1" class="form-control" name="q" placeholder="Buscar paciente..." />
                 </div>
-                <button type="submit" class="btn --green_button text-white">
+                <button type="submit" class="btn --green_button text-white mb-3 mb-md-0">
                     <i class="fas fa-search" style="filter: drop-shadow(1px 1px 1px black);"></i>
                 </button>
+                <a href="{{ route('admin.dashboard.index') }}" class="btn ms-2 rounded btn-primary text-white me-0 me-md-2">
+                    <i class="fas fa-hand-point-left" style="filter: drop-shadow(1px 1px 1px black);"></i> <span class="fw-bold">VOLTAR PARA DASHBOARD</span>
+                </a>
             </form>
+            <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <th>Nome</th>
@@ -50,6 +56,7 @@
                     @endforelse
                 </tbody>
             </table>
+            </div>
         </div>
         {{ $patients->links() }}
     </div>

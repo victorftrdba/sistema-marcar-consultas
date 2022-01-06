@@ -44,6 +44,7 @@
         <div class="row">
             <div class="col-12 mt-5 mb-5 text-center">
                 <h3 class="fw-bold text-uppercase">Últimas especialidades adicionadas</h3>
+                <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Nome</th>
@@ -60,9 +61,11 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
             <div class="col-12 mt-5 mb-5 text-center">
                 <h3 class="fw-bold text-uppercase">Últimos médicos adicionados</h3>
+                <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Nome</th>
@@ -83,9 +86,11 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
             <div class="col-12 mt-5 mb-5 text-center">
                 <h3 class="fw-bold text-uppercase">Últimos pacientes adicionados</h3>
+                <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Nome</th>
@@ -116,6 +121,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

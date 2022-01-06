@@ -1,5 +1,9 @@
 $green: #03fca1;
 
+body, html {
+    overflow-x: hidden;
+}
+
 .--login_section {
     .--login_card {
         position: absolute;
