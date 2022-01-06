@@ -26,9 +26,9 @@
             <label class="fw-bold text-uppercase mb-2" for="patient">Paciente</label>
             <input type="text" class="form-control" value="{{ $patient->name }}" disabled />
         </div>
-        <div class="col-6 text-center">
+        <div class="col-6 text-center mb-5 mb-md-0">
             <label class="fw-bold text-uppercase mb-2" for="doctor_id">Dia e Hora da Consulta</label>
-            <input type="datetime-local" name="consultation_time" class="form-control" value="{{ $patient->name }}" />
+            <input type="datetime-local" name="consultation_time" class="form-control" />
         </div>
         @if($patient->age < 12)
         <div class="col-6 text-center mb-4">

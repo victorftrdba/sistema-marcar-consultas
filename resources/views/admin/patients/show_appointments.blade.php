@@ -6,7 +6,7 @@
     <div class="row mb-5">
         <h2 class="text-uppercase fw-bold mb-5">Consultas de {{ $patient->name }} | Idade: {{ $patient->age }} anos</h2>
         @foreach($patient->appointments as $appointment)
-        <div class="col-12 col-md-4 mb-5 mb-md-0">
+        <div class="col-12 col-md-4 mb-4 mb-md-5 mb-md-0">
             <div class="card text-center">
                 <div class="card-header fw-bold">
                     Consulta marcada para:  {{ $appointment->consultation_time->format('d/m/Y H:i:s') }}
