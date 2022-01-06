@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\PatientController;
 */
 
 // Rotas para Login
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function() {
