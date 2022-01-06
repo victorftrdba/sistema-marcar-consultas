@@ -8,7 +8,7 @@ class DashboardRepository {
         $model->create($request->all());
     }
 
-    public function storeMany($request, $model, $second_model)
+    public static function storeMany($request, $model, $second_model)
     {
         $model->create($request->all());
 
