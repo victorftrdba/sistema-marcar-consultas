@@ -56,7 +56,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td>Nenhuma informação encontrada</td>
+                            <td colspan="1">Nenhuma informação encontrada</td>
                         </tr>
                         @endforelse
                     </tbody>
@@ -81,7 +81,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td>Nenhuma informação encontrada</td>
+                            <td colspan="3">Nenhuma informação encontrada</td>
                         </tr>
                         @endforelse
                     </tbody>
@@ -116,7 +116,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td>Nenhuma informação encontrada</td>
+                            <td colspan="8">Nenhuma informação encontrada</td>
                         </tr>
                         @endforelse
                     </tbody>
